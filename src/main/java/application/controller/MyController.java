@@ -118,8 +118,7 @@ public class MyController implements Initializable {
     }
 
     /**
-     * @Description 根据searchMusicText内容搜歌
-     * @author LIu Mingyao
+     * 根据searchMusicText内容搜歌
      */
     public void search() {
         musicList.setCellFactory(null);
@@ -166,9 +165,7 @@ public class MyController implements Initializable {
     }
 
     /**
-     * @param event
-     * @Description 播放音乐
-     * @author LIu Mingyao
+     * 播放音乐
      */
     public void play(ActionEvent event) {
 
@@ -176,8 +173,8 @@ public class MyController implements Initializable {
             System.out.println("*****************请先选择音乐再播放*****************");
             return;
         }
-
-        if (player != null && selectMusic != nowMusic) {// 切歌
+        // 切歌
+        if (player != null && selectMusic != nowMusic) {
             String statu = player.getStatus().toString();
             if (!statu.equals(MediaPlayer.Status.STOPPED.toString())) {
                 lyricShowUtil.lyricThread.interrupt();

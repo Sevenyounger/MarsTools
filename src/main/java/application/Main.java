@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -34,7 +35,10 @@ public class Main extends Application {
             // 初始化綁定的快捷鍵
             controller.shortcutKeys();
 
+            scene.getStylesheets().add(getClass().getResource("/application.css").toExternalForm());
             primaryStage.setScene(scene);
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/music.png")));
+
             primaryStage.setTitle("mars的小工具 v" + myConf.toolsVersion);
 
             //监听窗口关闭
@@ -43,6 +47,7 @@ public class Main extends Application {
 
         } catch (Exception e) {
             e.printStackTrace();
+            System.exit(0);
         }
 
     }
